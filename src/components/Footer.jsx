@@ -1,5 +1,5 @@
 import './Footer.css';
-import logo from '../assets/logofinal.jpg';
+import logo from '../assets/l.jpg';
 
 const Footer = () => {
   return (
@@ -61,9 +61,10 @@ const Footer = () => {
                 </div>
               </div>
               <div className="contact-item">
-                <i className="fab fa-viber"></i>
-                <p>Connect with us on Viber</p>
-                <p> ‪+960 7420036</p>
+                <i className="fas fa-map-marker-alt"></i>
+                <div>
+                  <p>Male, Maldives</p>
+                </div>
               </div>
             </div>
           </div>
@@ -76,6 +77,7 @@ const Footer = () => {
             <div className="footer-links">
               <a href="#privacy">Privacy Policy</a>
               <a href="#terms">Terms of Service</a>
+              <a href="https://www.flaticon.com/free-icons/viber" title="viber icons" target="_blank" rel="noopener noreferrer">Viber icons created by Rakib Hassan Rahim - Flaticon</a>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './Navbar.css';
-import logo from '../assets/logofinal.jpg';
+import logo from '../assets/l.jpg';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -33,7 +33,6 @@ const Navbar = () => {
               <li><a href="#services">Services</a></li>
               <li><a href="#about">About Us</a></li>
               <li><a href="#contact">Contact</a></li>
-              <li><a href="#map">Map</a></li>
             </ul>
           </div>
 
@@ -81,7 +80,6 @@ const Navbar = () => {
           <li><a href="#services" onClick={closeMobileMenu}>Services</a></li>
           <li><a href="#about" onClick={closeMobileMenu}>About Us</a></li>
           <li><a href="#contact" onClick={closeMobileMenu}>Contact</a></li>
-          <li><a href="#map" onClick={closeMobileMenu}>Map</a></li>
         </ul>
         
         <div className="social-links">

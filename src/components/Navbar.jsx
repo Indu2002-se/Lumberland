@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './Navbar.css';
 import logo from '../assets/l.jpg';
+import facebookIcon from '../assets/facebook.svg';
+import instagramIcon from '../assets/instergram.svg';
+import tiktokIcon from '../assets/tiktok.svg';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -28,7 +31,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="nav-links-container">
             <ul className="nav-links">
-              <li><Link to="/">Home</Link></li>
+              <li><a href="#home">Home</a></li>
               <li><a href="#products">Products</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#about">About Us</a></li>
@@ -39,13 +42,13 @@ const Navbar = () => {
           <div className="nav-actions">
             <div className="social-links">
               <a href="https://www.facebook.com/share/18ozRnRpCv/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="social-link facebook">
-                <i className="fab fa-facebook-f"></i>
+                <img src={facebookIcon} alt="Facebook" />
               </a>
               <a href="https://www.instagram.com/lumberlandmv?igsh=MWJkbnBlcmk2aHNiOQ==" target="_blank" rel="noopener noreferrer" className="social-link instagram">
-                <i className="fab fa-instagram"></i>
+                <img src={instagramIcon} alt="Instagram" />
               </a>
               <a href="https://www.tiktok.com/@lumberlandmv?_t=ZS-90vh8460Q1C&_r=1" target="_blank" rel="noopener noreferrer" className="social-link tiktok">
-                <i className="fab fa-tiktok"></i>
+                <img src={tiktokIcon} alt="TikTok" />
               </a>
               <a href="mailto:Sales@lumberland.mv" className="social-link email">
                 <i className="fas fa-envelope"></i>
@@ -75,7 +78,7 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       <div className={`nav-links-mobile ${isMobileMenuOpen ? 'active' : ''}`}>
         <ul className="nav-links">
-          <li><Link to="/" onClick={closeMobileMenu}>Home</Link></li>
+          <li><a href="#home" onClick={closeMobileMenu}>Home</a></li>
           <li><a href="#products" onClick={closeMobileMenu}>Products</a></li>
           <li><a href="#services" onClick={closeMobileMenu}>Services</a></li>
           <li><a href="#about" onClick={closeMobileMenu}>About Us</a></li>
@@ -84,13 +87,13 @@ const Navbar = () => {
         
         <div className="social-links">
           <a href="https://www.facebook.com/share/18ozRnRpCv/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="social-link facebook">
-            <i className="fab fa-facebook-f"></i>
+            <img src={facebookIcon} alt="Facebook" />
           </a>
           <a href="https://www.instagram.com/lumberlandmv?igsh=MWJkbnBlcmk2aHNiOQ==" target="_blank" rel="noopener noreferrer" className="social-link instagram">
-            <i className="fab fa-instagram"></i>
+            <img src={instagramIcon} alt="Instagram" />
           </a>
           <a href="https://www.tiktok.com/@lumberlandmv?_t=ZS-90vh8460Q1C&_r=1" target="_blank" rel="noopener noreferrer" className="social-link tiktok">
-            <i className="fab fa-tiktok"></i>
+            <img src={tiktokIcon} alt="TikTok" />
           </a>
           <a href="mailto:Sales@lumberland.mv" className="social-link email">
             <i className="fas fa-envelope"></i>

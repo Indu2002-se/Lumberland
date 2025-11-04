@@ -77,27 +77,37 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       <div className={`nav-links-mobile ${isMobileMenuOpen ? 'active' : ''}`}>
-        <ul className="nav-links">
-          <li><a href="#home" onClick={closeMobileMenu}>Home</a></li>
-          <li><a href="#products" onClick={closeMobileMenu}>Products</a></li>
-          <li><a href="#services" onClick={closeMobileMenu}>Services</a></li>
-          <li><a href="#about" onClick={closeMobileMenu}>About Us</a></li>
-          <li><a href="#contact" onClick={closeMobileMenu}>Contact</a></li>
-        </ul>
+        {/* Close Button */}
+        <button className="mobile-menu-close" onClick={closeMobileMenu}>
+          <i className="fas fa-times"></i>
+        </button>
         
-        <div className="social-links">
-          <a href="https://www.facebook.com/share/18ozRnRpCv/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="social-link facebook">
-            <img src={facebookIcon} alt="Facebook" />
-          </a>
-          <a href="https://www.instagram.com/lumberlandmv?igsh=MWJkbnBlcmk2aHNiOQ==" target="_blank" rel="noopener noreferrer" className="social-link instagram">
-            <img src={instagramIcon} alt="Instagram" />
-          </a>
-          <a href="https://www.tiktok.com/@lumberlandmv?_t=ZS-90vh8460Q1C&_r=1" target="_blank" rel="noopener noreferrer" className="social-link tiktok">
-            <img src={tiktokIcon} alt="TikTok" />
-          </a>
-          <a href="mailto:Sales@lumberland.mv" className="social-link email">
-            <i className="fas fa-envelope"></i>
-          </a>
+        <div className="mobile-menu-content">
+          <ul className="nav-links">
+            <li><a href="#home" onClick={closeMobileMenu}>Home</a></li>
+            <li><a href="#products" onClick={closeMobileMenu}>Products</a></li>
+            <li><a href="#services" onClick={closeMobileMenu}>Services</a></li>
+            <li><a href="#about" onClick={closeMobileMenu}>About Us</a></li>
+            <li><a href="#contact" onClick={closeMobileMenu}>Contact</a></li>
+          </ul>
+          
+          <div className="mobile-social-section">
+            <h4>Follow Us</h4>
+            <div className="social-links">
+              <a href="https://www.facebook.com/share/18ozRnRpCv/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="social-link facebook">
+                <img src={facebookIcon} alt="Facebook" />
+              </a>
+              <a href="https://www.instagram.com/lumberlandmv?igsh=MWJkbnBlcmk2aHNiOQ==" target="_blank" rel="noopener noreferrer" className="social-link instagram">
+                <img src={instagramIcon} alt="Instagram" />
+              </a>
+              <a href="https://www.tiktok.com/@lumberlandmv?_t=ZS-90vh8460Q1C&_r=1" target="_blank" rel="noopener noreferrer" className="social-link tiktok">
+                <img src={tiktokIcon} alt="TikTok" />
+              </a>
+              <a href="mailto:Sales@lumberland.mv" className="social-link email">
+                <i className="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </>

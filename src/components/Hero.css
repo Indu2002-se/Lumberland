@@ -252,6 +252,17 @@
 @media (max-width: 768px) {
     .hero {
         padding: 2rem 5%;
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    .hero-bg-image img {
+        max-width: 120%;
+        max-height: 120%;
+        width: auto;
+        height: auto;
+        object-fit: cover;
+        transform: scale(1.2);
     }
 
     .hero-content {
@@ -466,6 +477,18 @@
 }
 
 @media (max-width: 480px) {
+    .hero {
+        height: 70vh;
+        min-height: 350px;
+    }
+
+    .hero-bg-image img {
+        max-width: 140%;
+        max-height: 140%;
+        transform: scale(1.4);
+        object-fit: cover;
+    }
+
     .hero-content {
         padding: 2rem;
     }

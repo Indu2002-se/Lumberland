@@ -24,41 +24,32 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="hero" id="home">
-      <div className="hero-background">
-        {backgroundImages.map((bg, index) => (
-          <div
-            key={index}
-            className={`hero-bg-image ${index === currentBg ? 'active' : ''}`}
-            style={{ backgroundImage: `url(${bg})` }}
-          />
-        ))}
-        <div className="hero-overlay" />
-      </div>
+    <>
+      <section className="hero" id="home">
+        <div className="hero-background">
+          {backgroundImages.map((bg, index) => (
+            <div
+              key={index}
+              className={`hero-bg-image ${index === currentBg ? 'active' : ''}`}
+            >
+              <img src={bg} alt={`Hero background ${index + 1}`} />
+            </div>
+          ))}
+          <div className="hero-overlay" />
+        </div>
+      </section>
 
-      <div className="hero-container">
-        <div className="hero-content">
-          <h1>Lumber Land</h1>
-          <h2>Malaysian Timber Specialists</h2>
-          <p>Premium quality timber, expert craftsmanship, and exceptional service. Your trusted partner for all timber and construction material needs in the Maldives.</p>
-
-          <div className="hero-buttons">
-            <a href="#products" className="btn-primary">
-              Explore Products →
-            </a>
-
-          </div>
-
-
+      {/* Viber Contact Widget */}
+      <div className="viber-widget">
+        <div className="viber-icon">
+          <i className="fab fa-viber"></i>
+        </div>
+        <div className="viber-info">
+          <span className="viber-label">Call us on Viber</span>
+          <span className="viber-number">+960 7420036</span>
         </div>
       </div>
-
-      <div className="floating-elements">
-        <div className="floating-element"></div>
-        <div className="floating-element"></div>
-        <div className="floating-element"></div>
-      </div>
-    </section>
+    </>
   );
 };
 

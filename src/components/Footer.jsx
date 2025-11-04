@@ -77,7 +77,7 @@ const Footer = () => {
             <div className="footer-links">
               <a href="#privacy">Privacy Policy</a>
               <a href="#terms">Terms of Service</a>
-              <a href="https://www.flaticon.com/free-icons/viber" title="viber icons" target="_blank" rel="noopener noreferrer">Viber icons created by Rakib Hassan Rahim - Flaticon</a>
+              
             </div>
           </div>
         </div>

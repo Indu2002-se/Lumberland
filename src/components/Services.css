@@ -1,8 +1,12 @@
 /* Services Section */
 .services {
-    padding: 5rem 5%;
+    min-height: 100vh;
+    padding: 6rem 5% 4rem 5%;
     background: #f8f9fa;
     font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .services .container {

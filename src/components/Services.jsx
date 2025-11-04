@@ -1,5 +1,5 @@
 import './Services.css';
-import serviceImage1 from '../assets/sevice.png'; // Using as placeholder for cutting service
+import serviceImage1 from '../assets/IMAGES/hero7.png'; // Using as placeholder for cutting service
 import serviceImage2 from '../assets/service1.jpg'; // Using as placeholder for sourcing
 
 const Services = () => {

@@ -1,3 +1,8 @@
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Navbar Styles */
 nav {
     background: #ffffff;
@@ -126,55 +131,29 @@ nav {
     height: 40px;
     text-decoration: none;
     font-size: 1.1rem;
-    border-radius: 50%;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(0);
     position: relative;
+    background: transparent;
+    border: none;
 }
 
 .social-link img {
-    width: 24px;
-    height: 24px;
+    width: 35px;
+    height: 35px;
     object-fit: contain;
 }
 
+.social-link i {
+    font-size: 30px;
+}
+
 .social-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
 }
 
 .social-link:active {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-
-
-.social-link.facebook:hover {
-    background: linear-gradient(145deg, #145dbf, #1877f2);
-    box-shadow: 0 8px 16px rgba(24, 119, 242, 0.4);
-}
-
-
-
-.social-link.instagram:hover {
-    background: linear-gradient(145deg, #c13584, #e4405f);
-    box-shadow: 0 8px 16px rgba(228, 64, 95, 0.4);
-}
-
-
-
-.social-link.tiktok:hover {
-    background: linear-gradient(145deg, #333333, #000000);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-
-
-.social-link.email:hover {
-    background: linear-gradient(145deg, #d33b2c, #ea4335);
-    box-shadow: 0 8px 16px rgba(234, 67, 53, 0.4);
+    transform: scale(0.95);
 }
 
 /* Mobile Menu Overlay */

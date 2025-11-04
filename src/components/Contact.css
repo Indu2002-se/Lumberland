@@ -1,19 +1,13 @@
 /* Modern Contact Section */
-.contact {
-    padding: 0;
-    background: #1a1a1a;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial', sans-serif;
-}
+
 
 .contact-wrapper {
     display: flex;
     width: 100%;
     max-width: 1400px;
+    
     margin: 0 auto;
-    min-height: 600px;
+    min-height: 100px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     border-radius: 0;
 }
@@ -276,4 +270,35 @@
     .contact-text p {
         font-size: 0.8rem;
     }
+}/* Map Li
+nk and Directions Button */
+.map-link {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.directions-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.directions-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.directions-btn i {
+    font-size: 1rem;
 }

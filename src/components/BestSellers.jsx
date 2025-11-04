@@ -8,6 +8,10 @@ import giRoofingSeet from '../assets/IMAGES/giroofingSeet.png';
 import pineBoard from '../assets/IMAGES/pineBoard.png';
 import plywood from '../assets/IMAGES/plywood.png';
 import pvcFormBoard from '../assets/IMAGES/pvcFormBoard.png';
+import giRectangularHollow from '../assets/IMAGES/gi rectangular hollow section.jpg';
+import giSquareHollow from '../assets/IMAGES/gi Square hollow section.jpg';
+import mixHardWood from '../assets/IMAGES/mix hard wood.jpg';
+import redMeranti from '../assets/IMAGES/red meranti.jpg';
 
 // Detail images for popup
 import blockboardDetails from '../assets/IMAGES/blockboard_details.png';
@@ -86,6 +90,38 @@ const BestSellers = () => {
       detailImage: pvcFormBoardDetails,
       badge: "Waterproof",
       description: "Lightweight, waterproof PVC boards perfect for bathroom applications, kitchen cabinets, and areas exposed to moisture. Easy to clean and maintain."
+    },
+    {
+      id: 9,
+      name: "GI Rectangular Hollow Section",
+      image: giRectangularHollow,
+      detailImage: giRectangularHollow,
+      badge: "Structural",
+      description: "High-strength galvanized iron rectangular hollow sections perfect for structural applications, framework, and construction projects. Excellent corrosion resistance and durability."
+    },
+    {
+      id: 10,
+      name: "GI Square Hollow Section",
+      image: giSquareHollow,
+      detailImage: giSquareHollow,
+      badge: "Versatile",
+      description: "Premium galvanized iron square hollow sections ideal for construction frameworks, gates, railings, and structural applications. Superior strength and weather resistance."
+    },
+    {
+      id: 11,
+      name: "Mix Hard Wood",
+      image: mixHardWood,
+      detailImage: mixHardWood,
+      badge: "Premium",
+      description: "High-quality mixed hardwood lumber with excellent strength and beautiful natural grain patterns. Perfect for furniture making, flooring, and premium construction projects."
+    },
+    {
+      id: 12,
+      name: "Red Meranti",
+      image: redMeranti,
+      detailImage: redMeranti,
+      badge: "Exotic",
+      description: "Premium red meranti hardwood with rich reddish-brown color and fine grain. Excellent for high-end furniture, cabinetry, doors, and decorative woodworking projects."
     }
   ];
 

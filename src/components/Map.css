@@ -1,7 +1,13 @@
 .map-section {
-    padding: 4rem 5%;
+    min-height: 100vh;
+    padding: 6rem 5% 4rem 5%;
     background: #f8f9fa;
     font-family: 'Times New Roman', Times, serif;
+    margin-top: 0;
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .container {

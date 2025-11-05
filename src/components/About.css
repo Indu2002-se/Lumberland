@@ -1,12 +1,25 @@
 /* About Section */
 .about {
-    background: #f8f9fa;
+    background: #ffffff94;
     font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
+/* Decorative diamond accent */
+.about::after {
+    content: '◆';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #007bff;
+    background: white;
+    padding: 0 clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    text-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+    z-index: 2;
+}
 .about .container {
     max-width: 1400px;
     margin: 0 auto;

@@ -9,6 +9,8 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
 
 body {
@@ -17,6 +19,7 @@ body {
     background: #ffffff;
     color: #333333;
     line-height: 1.6;
+    scroll-snap-type: y mandatory;
 }
 
 /* Prevent horizontal scroll on mobile */

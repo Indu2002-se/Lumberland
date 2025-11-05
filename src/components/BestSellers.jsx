@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './BestSellers.css';
 import blockboard from '../assets/IMAGES/blockboard.png';
 import fiberCinementBoard from '../assets/IMAGES/fiberCinemenBoard.png';
@@ -25,6 +25,8 @@ import pvcFormBoardDetails from '../assets/IMAGES/pvcFormBoard_details.png';
 
 const BestSellers = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [currentPosition, setCurrentPosition] = useState(0);
+  const scrollRef = useRef(null);
 
   const products = [
     {
@@ -133,6 +135,29 @@ const BestSellers = () => {
     setSelectedProduct(null);
   };
 
+  // Update scroll position
+  useEffect(() => {
+    if (scrollRef.current) {
+      const cardWidth = 350 + 80; // card width + gap
+      scrollRef.current.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
+    }
+  }, [currentPosition]);
+
+  const scrollLeft = () => {
+    setCurrentPosition(prev => {
+      const newPosition = prev - 1;
+      return newPosition < 0 ? products.length - 1 : newPosition;
+    });
+  };
+
+  const scrollRight = () => {
+    setCurrentPosition(prev => {
+      const newPosition = prev + 1;
+      const maxPosition = products.length;
+      return newPosition >= maxPosition ? 0 : newPosition;
+    });
+  };
+
   return (
     <section className="best-sellers" id="products">
       <div className="container">
@@ -141,7 +166,17 @@ const BestSellers = () => {
         </div>
         
         <div className="products-scroll-container">
-          <div className="products-scroll">
+          {/* Manual Control Buttons */}
+          <button className="scroll-btn scroll-btn-left" onClick={scrollLeft}>
+            <i className="fas fa-chevron-left"></i>
+          </button>
+          <button className="scroll-btn scroll-btn-right" onClick={scrollRight}>
+            <i className="fas fa-chevron-right"></i>
+          </button>
+          
+
+          
+          <div className="products-scroll" ref={scrollRef}>
             {products.concat(products).map((product, index) => (
               <div 
                 key={`${product.id}-${index}`} 
@@ -156,6 +191,17 @@ const BestSellers = () => {
                   <h3>{product.name}</h3>
                 </div>
               </div>
+            ))}
+          </div>
+          
+          {/* Progress Indicators */}
+          <div className="scroll-indicators">
+            {products.map((_, index) => (
+              <button
+                key={index}
+                className={`indicator ${index === currentPosition ? 'active' : ''}`}
+                onClick={() => setCurrentPosition(index)}
+              />
             ))}
           </div>
         </div>

@@ -7,6 +7,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+/* Decorative border line at the top of products section */
+
+
+/* Decorative diamond accent */
+.best-sellers::after {
+    content: '◆';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #007bff;
+    background: white;
+    padding: 0 clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    text-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+    z-index: 2;
 }
 
 .container {
@@ -59,30 +78,79 @@
 
 /* Scrolling Products Container */
 .products-scroll-container {
-
     width: 100%;
     position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
 }
 
 .products-scroll {
     display: flex;
     gap: 5rem;
-    animation: scrollRight 60s linear infinite;
     width: fit-content;
+    transition: transform 0.5s ease;
 }
 
-@keyframes scrollRight {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
+/* Manual Control Buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 123, 255, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
-.products-scroll:hover {
-    animation-play-state: paused;
+.scroll-btn:hover {
+    background: rgba(0, 123, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.scroll-btn-left {
+    left: 10px;
+}
+
+.scroll-btn-right {
+    right: 10px;
+}
+
+
+
+/* Progress Indicators */
+.scroll-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 123, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #007bff;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    background: rgba(0, 123, 255, 0.7);
+    transform: scale(1.1);
 }
 
 .product-card {
@@ -184,6 +252,27 @@
         min-width: 280px;
         padding: 1.5rem;
     }
+
+    .scroll-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .scroll-btn-left {
+        left: 5px;
+    }
+
+    .scroll-btn-right {
+        right: 5px;
+    }
+
+
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -206,6 +295,24 @@
 
     .product-image {
         height: 150px;
+    }
+
+    .scroll-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+
+    .scroll-indicators {
+        margin-top: 1.5rem;
+        gap: 0.3rem;
     }
 }
 

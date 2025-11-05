@@ -8,7 +8,7 @@ import hero3 from '../assets/IMAGES/hero3.png';
 import hero4 from '../assets/IMAGES/hero4.png';
 import hero5 from '../assets/IMAGES/hero5.png';
 import hero6 from '../assets/IMAGES/hero6.png';
-import hero7 from '../assets/IMAGES/hero7.png';
+import hero7 from '../assets/IMAGES/hero8.png';
 
 const Hero = () => {
   const heroImages = [hero1, hero2, hero3, hero4, hero5, hero6, hero7];
@@ -38,7 +38,7 @@ const Hero = () => {
           ))}
         </div>
 
-        
+
         <div className="floating-elements">
           <div className="floating-element"></div>
           <div className="floating-element"></div>

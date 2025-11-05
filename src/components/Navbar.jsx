@@ -7,7 +7,7 @@ import tiktokIcon from '../assets/tiktok.svg';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isNavbarVisible, setIsNavbarVisible] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -37,13 +37,33 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      // Show navbar when cursor is near the top (within 100px from top)
-      if (e.clientY <= 100) {
+    let lastScrollY = window.scrollY;
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Always show navbar when mobile menu is open
+      if (isMobileMenuOpen) {
         setIsNavbarVisible(true);
-      } else {
-        setIsNavbarVisible(false);
+        return;
       }
+      
+      // Show navbar only at the very top of the page (0-5px)
+      if (currentScrollY <= 5) {
+        setIsNavbarVisible(true);
+      }
+      // Hide navbar immediately when scrolling down from top
+      else if (currentScrollY > lastScrollY && currentScrollY > 5) {
+        // Scrolling down - hide navbar immediately
+        setIsNavbarVisible(false);
+      } 
+      // Show navbar when scrolling up
+      else if (currentScrollY < lastScrollY) {
+        // Scrolling up - show navbar
+        setIsNavbarVisible(true);
+      }
+      
+      lastScrollY = currentScrollY;
     };
 
     // Always show navbar when mobile menu is open
@@ -51,10 +71,10 @@ const Navbar = () => {
       setIsNavbarVisible(true);
     }
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [isMobileMenuOpen]);
 

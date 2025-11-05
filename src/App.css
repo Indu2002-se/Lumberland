@@ -9,9 +9,9 @@
 section {
     scroll-margin-top: clamp(80px, 15vw, 120px);
     position: relative;
-    padding: clamp(1rem, 4vw, 4rem) 0;
+    padding: clamp(3rem, 4vw, 4rem) 0;
     width: 100%;
-    margin-bottom: clamp(4rem, 3vw, 2rem);
+    margin-bottom: clamp(2rem, 5vw, 4rem);
 }
 
 /* Beautiful section dividers - Responsive */

@@ -5,6 +5,21 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+}
+/* Decorative diamond accent */
+.services::after {
+    content: '◆';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #007bff;
+    background: white;
+    padding: 0 clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    text-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+    z-index: 2;
 }
 
 .services .container {
@@ -138,11 +153,11 @@
         text-align: center;
         gap: 2rem;
     }
-    
+
     .service-item.reverse {
         flex-direction: column;
     }
-    
+
     .service-image {
         flex: none;
         width: 100%;
@@ -154,15 +169,15 @@
     .services .section-header h2 {
         font-size: 2rem;
     }
-    
+
     .service-item {
         padding: 2rem;
     }
-    
+
     .service-content h3 {
         font-size: 1.5rem;
     }
-    
+
     .service-image {
         height: 250px;
     }
@@ -172,27 +187,27 @@
     .services .section-header {
         margin-bottom: 1.5rem;
     }
-    
+
     .services .section-header h2 {
         font-size: 1.8rem;
     }
-    
+
     .services-container {
         gap: 1.5rem;
     }
-    
+
     .service-item {
         padding: 1.5rem;
     }
-    
+
     .service-content h3 {
         font-size: 1.3rem;
     }
-    
+
     .service-content p {
         font-size: 1rem;
     }
-    
+
     .service-image {
         height: 200px;
     }

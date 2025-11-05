@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './Navbar.css';
 import logo from '../assets/l.jpg';
@@ -64,10 +63,10 @@ const Navbar = () => {
       <nav className={`navbar ${isNavbarVisible ? 'visible' : 'hidden'}`}>
         <div className="nav-container">
           <div className="logo">
-            <Link to="/" className="logo-link" onClick={closeMobileMenu}>
+            <a href="#home" className="logo-link" onClick={(e) => handleSmoothScroll(e, 'home')}>
               <img src={logo} alt="LumberLand Logo" className="logo-image" />
               <span className="logo-text">LumberLand</span>
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Navigation */}

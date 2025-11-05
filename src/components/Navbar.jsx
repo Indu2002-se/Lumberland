@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Navbar.css';
 import logo from '../assets/l.jpg';
 import facebookIcon from '../assets/facebook.svg';
@@ -8,6 +8,7 @@ import tiktokIcon from '../assets/tiktok.svg';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -17,9 +18,50 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
+  // Smooth scroll function with navbar offset
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const navbarHeight = 80; // Fixed navbar height
+      const targetPosition = targetElement.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+    
+    // Close mobile menu if open
+    closeMobileMenu();
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      // Show navbar when cursor is near the top (within 100px from top)
+      if (e.clientY <= 100) {
+        setIsNavbarVisible(true);
+      } else {
+        setIsNavbarVisible(false);
+      }
+    };
+
+    // Always show navbar when mobile menu is open
+    if (isMobileMenuOpen) {
+      setIsNavbarVisible(true);
+    }
+
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <>
-      <nav>
+      <nav className={`navbar ${isNavbarVisible ? 'visible' : 'hidden'}`}>
         <div className="nav-container">
           <div className="logo">
             <Link to="/" className="logo-link" onClick={closeMobileMenu}>
@@ -31,11 +73,11 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="nav-links-container">
             <ul className="nav-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#products">Products</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#home" onClick={(e) => handleSmoothScroll(e, 'home')}>Home</a></li>
+              <li><a href="#products" onClick={(e) => handleSmoothScroll(e, 'products')}>Products</a></li>
+              <li><a href="#services" onClick={(e) => handleSmoothScroll(e, 'services')}>Services</a></li>
+              <li><a href="#about" onClick={(e) => handleSmoothScroll(e, 'about')}>About Us</a></li>
+              <li><a href="#contact" onClick={(e) => handleSmoothScroll(e, 'contact')}>Contact</a></li>
             </ul>
           </div>
 
@@ -84,11 +126,11 @@ const Navbar = () => {
         
         <div className="mobile-menu-content">
           <ul className="nav-links">
-            <li><a href="#home" onClick={closeMobileMenu}>Home</a></li>
-            <li><a href="#products" onClick={closeMobileMenu}>Products</a></li>
-            <li><a href="#services" onClick={closeMobileMenu}>Services</a></li>
-            <li><a href="#about" onClick={closeMobileMenu}>About Us</a></li>
-            <li><a href="#contact" onClick={closeMobileMenu}>Contact</a></li>
+            <li><a href="#home" onClick={(e) => handleSmoothScroll(e, 'home')}>Home</a></li>
+            <li><a href="#products" onClick={(e) => handleSmoothScroll(e, 'products')}>Products</a></li>
+            <li><a href="#services" onClick={(e) => handleSmoothScroll(e, 'services')}>Services</a></li>
+            <li><a href="#about" onClick={(e) => handleSmoothScroll(e, 'about')}>About Us</a></li>
+            <li><a href="#contact" onClick={(e) => handleSmoothScroll(e, 'contact')}>Contact</a></li>
           </ul>
           
           <div className="mobile-social-section">

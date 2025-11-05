@@ -8,9 +8,9 @@ const Services = () => {
       <div className="container">
         <div className="section-header">
           <h2>OUR SERVICES</h2>
-          <p>Professional timber solutions tailored to your needs</p>
+
         </div>
-        
+
         <div className="services-container">
           {/* Custom Cutting Services */}
           <div className="service-item reverse">

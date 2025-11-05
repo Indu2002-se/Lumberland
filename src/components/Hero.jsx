@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Hero.css';
+
+// Import hero images
 import hero1 from '../assets/IMAGES/hero1.png';
 import hero2 from '../assets/IMAGES/hero2.png';
 import hero3 from '../assets/IMAGES/hero3.png';
@@ -9,33 +11,38 @@ import hero6 from '../assets/IMAGES/hero6.png';
 import hero7 from '../assets/IMAGES/hero7.png';
 
 const Hero = () => {
-  const [currentBg, setCurrentBg] = useState(0);
-
-  const backgroundImages = [hero1, hero2, hero3, hero4, hero5, hero6, hero7];
+  const heroImages = [hero1, hero2, hero3, hero4, hero5, hero6, hero7];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    const bgInterval = setInterval(() => {
-      setCurrentBg((prev) => (prev + 1) % backgroundImages.length);
-    }, 4000);
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // Change image every 4 seconds
 
-    return () => {
-      clearInterval(bgInterval);
-    };
-  }, []);
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 
   return (
     <>
       <section className="hero" id="home">
-        <div className="hero-background">
-          {backgroundImages.map((bg, index) => (
-            <div
+        <div className="hero-image-container">
+          {heroImages.map((image, index) => (
+            <img
               key={index}
-              className={`hero-bg-image ${index === currentBg ? 'active' : ''}`}
-            >
-              <img src={bg} alt={`Hero background ${index + 1}`} />
-            </div>
+              src={image}
+              alt={`Hero ${index + 1}`}
+              className={`hero-image ${index === currentImageIndex ? 'active' : ''}`}
+            />
           ))}
-          <div className="hero-overlay" />
+        </div>
+
+        
+        <div className="floating-elements">
+          <div className="floating-element"></div>
+          <div className="floating-element"></div>
+          <div className="floating-element"></div>
         </div>
       </section>
 

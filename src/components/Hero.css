@@ -1,50 +1,52 @@
 /* Hero Section */
 .hero {
-    margin-top: 90px;
+
     width: 100vw;
-    height: 41vw;
-    min-height: 0vh;
+    height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
     font-family: 'Times New Roman', Times, serif;
 }
 
-.hero-background {
+.hero-image-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -2;
+    z-index: 1;
 }
 
-.hero-bg-image {
+.hero-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hero-image.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
     display: flex;
     align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.hero-bg-image img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5)) drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3)) drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
-    transition: filter 0.3s ease;
-}
-
-.hero-bg-image.active {
-    opacity: 1;
+    justify-content: flex-start;
 }
 
 
@@ -251,18 +253,10 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding: 2rem 5%;
+        width: 100%;
         height: 60vh;
         min-height: 400px;
-    }
-
-    .hero-bg-image img {
-        max-width: 120%;
-        max-height: 120%;
-        width: auto;
-        height: auto;
-        object-fit: cover;
-        transform: scale(1.2);
+        padding: 2rem 5%;
     }
 
     .hero-content {
@@ -478,15 +472,9 @@
 
 @media (max-width: 480px) {
     .hero {
+        width: 100%;
         height: 70vh;
         min-height: 350px;
-    }
-
-    .hero-bg-image img {
-        max-width: 140%;
-        max-height: 140%;
-        transform: scale(1.4);
-        object-fit: cover;
     }
 
     .hero-content {

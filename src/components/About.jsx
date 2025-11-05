@@ -8,40 +8,63 @@ const About = () => {
         <div className="section-header">
           <h2>ABOUT US</h2>
         </div>
-        
-        <div className="about-container">
-          <div className="about-image">
-            <img src={aboutImage} alt="About LumberLand" />
-          </div>
-          
-          <div className="about-content">
-            <div className="about-section">
-              <h3>Our Story</h3>
-              <p>
-                Founded with a vision to provide premium quality timber solutions, LumberLand has grown from a small local business to a trusted name in the Malaysian timber industry.
-              </p>
-              <p>
-                Our commitment to excellence, combined with deep industry knowledge and modern facilities, has enabled us to serve over 500 satisfied customers and complete more than 1000 successful projects.
-              </p>
-              <p>
-                We specialize in authentic Malaysian timber sourcing, custom cutting services, and comprehensive project support, ensuring that every client receives exactly what they need for their projects.
+
+        <div className="about-main">
+          <div className="about-hero">
+            <div className="about-text">
+              <h3>Building Excellence Since Day One</h3>
+              <p className="about-intro">
+                LumberLand has grown from a small local business to a trusted name in the Malaysian timber industry, 
+                serving the Maldives with premium quality building materials and exceptional service.
               </p>
             </div>
-            
-            <div className="mission-vision">
-              <div className="mission">
-                <h4>Our Mission</h4>
-                <p>
-                  To provide exceptional timber products and services that exceed customer expectations while maintaining the highest standards of quality, sustainability, and professional integrity.
-                </p>
+            <div className="about-image-wrapper">
+              <img src={aboutImage} alt="About LumberLand" />
+            </div>
+          </div>
+
+          <div className="about-features">
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-award"></i>
               </div>
-              
-              <div className="vision">
-                <h4>Our Vision</h4>
-                <p>
-                  To be the leading timber specialist in the region, recognized for innovation, quality, and customer satisfaction while contributing to sustainable forestry practices.
-                </p>
+              <h4>Premium Quality</h4>
+              <p>We source only the finest Malaysian timber and building materials, ensuring every product meets our high standards.</p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-tools"></i>
               </div>
+              <h4>Expert Craftsmanship</h4>
+              <p>Our skilled team provides custom cutting services and professional guidance for all your construction needs.</p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-shipping-fast"></i>
+              </div>
+              <h4>Reliable Service</h4>
+              <p>Fast delivery, competitive pricing, and comprehensive project support from start to finish.</p>
+            </div>
+          </div>
+
+          <div className="about-stats">
+            <div className="stat-item">
+              <span className="stat-number">500+</span>
+              <span className="stat-label">Happy Customers</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">1000+</span>
+              <span className="stat-label">Projects Completed</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">15+</span>
+              <span className="stat-label">Years Experience</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">100%</span>
+              <span className="stat-label">Customer Satisfaction</span>
             </div>
           </div>
         </div>

@@ -1,7 +1,5 @@
 /* About Section */
 .about {
-    min-height: 100vh;
-    padding: 6rem 5% 4rem 5%;
     background: #f8f9fa;
     font-family: 'Times New Roman', Times, serif;
     display: flex;
@@ -18,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     position: relative;
     width: 100%;
 }
@@ -47,7 +45,7 @@
 .about-main {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
 }
 
 .about-hero {
@@ -199,10 +197,6 @@
 }
 
 @media (max-width: 768px) {
-    .about {
-        padding: 3rem 5%;
-    }
-
     .about .section-header h2 {
         font-size: 2rem;
     }
@@ -213,7 +207,7 @@
     }
 
     .about-main {
-        gap: 3rem;
+        gap: 2rem;
     }
 
     .about-hero {
@@ -249,12 +243,8 @@
 }
 
 @media (max-width: 480px) {
-    .about {
-        padding: 1rem 3%;
-    }
-
     .about .section-header {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
 
     .about .section-header h2 {
@@ -267,7 +257,7 @@
     }
 
     .about-main {
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .about-hero {

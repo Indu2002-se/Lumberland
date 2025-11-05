@@ -1,7 +1,5 @@
 /* Services Section */
 .services {
-    min-height: 100vh;
-    padding: 6rem 5% 4rem 5%;
     background: #f8f9fa;
     font-family: 'Times New Roman', Times, serif;
     display: flex;
@@ -18,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     position: relative;
     width: 100%;
 }
@@ -54,7 +52,7 @@
 .services-container {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
 }
 
 .service-item {
@@ -153,10 +151,6 @@
 }
 
 @media (max-width: 768px) {
-    .services {
-        padding: 3rem 5%;
-    }
-    
     .services .section-header h2 {
         font-size: 2rem;
     }
@@ -175,12 +169,8 @@
 }
 
 @media (max-width: 480px) {
-    .services {
-        padding: 1rem 3%;
-    }
-    
     .services .section-header {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
     
     .services .section-header h2 {
@@ -188,7 +178,7 @@
     }
     
     .services-container {
-        gap: 2rem;
+        gap: 1.5rem;
     }
     
     .service-item {

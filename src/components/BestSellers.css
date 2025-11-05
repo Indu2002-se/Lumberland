@@ -1,6 +1,4 @@
 .best-sellers {
-    min-height: 100vh;
-    padding: 6rem 5% 8rem 5%;
     background: #ffffff;
     font-family: 'Times New Roman', Times, serif;
     margin-top: 0;
@@ -21,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 8rem;
+    margin-bottom: 3rem;
     position: relative;
     width: 100%;
 }
@@ -167,15 +165,11 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .best-sellers {
-        padding: 1rem 5%;
-    }
-
     .section-header {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
 
     .section-header h2 {
@@ -193,12 +187,8 @@
 }
 
 @media (max-width: 480px) {
-    .best-sellers {
-        padding: 0.5rem 3%;
-    }
-
     .section-header {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
 
     .section-header h2 {

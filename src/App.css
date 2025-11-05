@@ -11,6 +11,7 @@ section {
     position: relative;
     padding: clamp(1rem, 4vw, 4rem) 0;
     width: 100%;
+    margin-bottom: clamp(4rem, 3vw, 2rem);
 }
 
 /* Beautiful section dividers - Responsive */
@@ -129,10 +130,21 @@ section:not(:last-child)::after {
     width: 100%;
 }
 
-.grid-1 { grid-template-columns: 1fr; }
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-1 {
+    grid-template-columns: 1fr;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
 
 /* Responsive Flexbox Utilities */
 .flex {
@@ -176,14 +188,20 @@ section:not(:last-child)::after {
     text-decoration: none;
     display: inline-block;
     text-align: center;
-    min-height: 44px; /* Touch-friendly minimum */
+    min-height: 44px;
+    /* Touch-friendly minimum */
 }
 
 /* Mobile-specific responsive breakpoints */
 @media (max-width: 1024px) {
-    .grid-4 { grid-template-columns: repeat(2, 1fr); }
-    .grid-3 { grid-template-columns: repeat(2, 1fr); }
-    
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .section-header::before,
     .section-header::after {
         display: none;
@@ -191,31 +209,32 @@ section:not(:last-child)::after {
 }
 
 @media (max-width: 768px) {
+
     .grid-4,
     .grid-3,
-    .grid-2 { 
-        grid-template-columns: 1fr; 
+    .grid-2 {
+        grid-template-columns: 1fr;
     }
-    
+
     .flex {
         flex-direction: column;
     }
-    
+
     .flex-between {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     section {
         scroll-margin-top: 100px;
         margin-bottom: 0;
     }
-    
+
     /* Mobile section transitions */
     section:nth-child(even) {
         background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
     }
-    
+
     section:nth-child(odd) {
         background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     }
@@ -226,11 +245,11 @@ section:not(:last-child)::after {
         margin: 0.5rem;
         padding: 1rem;
     }
-    
+
     .card {
         padding: 1rem;
     }
-    
+
     section {
         padding: 1rem 0;
     }
@@ -240,7 +259,7 @@ section:not(:last-child)::after {
     .section-header {
         margin-bottom: 1.5rem;
     }
-    
+
     .decorative-card::before,
     .decorative-card::after {
         width: 15px;

@@ -250,7 +250,11 @@
 
 @media (max-width: 480px) {
     .about {
-        padding: 2rem 3%;
+        padding: 1rem 3%;
+    }
+
+    .about .section-header {
+        margin-bottom: 2rem;
     }
 
     .about .section-header h2 {
@@ -260,6 +264,10 @@
     .about .section-header::before,
     .about .section-header::after {
         margin: 0 0.5rem;
+    }
+
+    .about-main {
+        gap: 2rem;
     }
 
     .about-hero {
@@ -272,6 +280,10 @@
 
     .about-intro {
         font-size: 0.95rem;
+    }
+
+    .about-features {
+        gap: 1rem;
     }
 
     .feature-card {

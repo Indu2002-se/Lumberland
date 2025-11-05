@@ -176,11 +176,19 @@
 
 @media (max-width: 480px) {
     .services {
-        padding: 2rem 3%;
+        padding: 1rem 3%;
+    }
+    
+    .services .section-header {
+        margin-bottom: 2rem;
     }
     
     .services .section-header h2 {
         font-size: 1.8rem;
+    }
+    
+    .services-container {
+        gap: 2rem;
     }
     
     .service-item {
@@ -193,5 +201,9 @@
     
     .service-content p {
         font-size: 1rem;
+    }
+    
+    .service-image {
+        height: 200px;
     }
 }

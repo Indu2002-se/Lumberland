@@ -14,7 +14,7 @@ const About = () => {
             <div className="about-text">
               <h3>Building Excellence Since Day One</h3>
               <p className="about-intro">
-                LumberLand has grown from a small local business to a trusted name in the Malaysian timber industry, 
+                LumberLand has grown from a small local business to a trusted name in the Malaysian timber industry,
                 serving the Maldives with premium quality building materials and exceptional service.
               </p>
             </div>
@@ -23,7 +23,7 @@ const About = () => {
             </div>
           </div>
 
-          
+
         </div>
       </div>
     </section>

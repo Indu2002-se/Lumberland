@@ -26,7 +26,9 @@ import pvcFormBoardDetails from '../assets/IMAGES/pvcFormBoard_details.png';
 const BestSellers = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [currentPosition, setCurrentPosition] = useState(0);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
   const scrollRef = useRef(null);
+  const intervalRef = useRef(null);
 
   const products = [
     {
@@ -135,27 +137,53 @@ const BestSellers = () => {
     setSelectedProduct(null);
   };
 
-  // Update scroll position
+  // Continuous scroll management
   useEffect(() => {
     if (scrollRef.current) {
-      const cardWidth = 350 + 80; // card width + gap
-      scrollRef.current.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
+      if (isAutoScrolling) {
+        // Enable continuous CSS animation
+        scrollRef.current.style.animation = 'scrollRightContinuous 60s linear infinite';
+      } else {
+        // Disable animation and set manual position
+        scrollRef.current.style.animation = 'none';
+        const cardWidth = 350 + 80; // card width + gap
+        scrollRef.current.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
+      }
     }
-  }, [currentPosition]);
+  }, [isAutoScrolling, currentPosition]);
 
   const scrollLeft = () => {
+    // Pause continuous scroll and use manual control
+    setIsAutoScrolling(false);
     setCurrentPosition(prev => {
       const newPosition = prev - 1;
       return newPosition < 0 ? products.length - 1 : newPosition;
     });
+
+    // Resume continuous scroll after 5 seconds
+    setTimeout(() => setIsAutoScrolling(true), 5000);
   };
 
   const scrollRight = () => {
+    // Pause continuous scroll and use manual control
+    setIsAutoScrolling(false);
     setCurrentPosition(prev => {
       const newPosition = prev + 1;
       const maxPosition = products.length;
       return newPosition >= maxPosition ? 0 : newPosition;
     });
+
+    // Resume continuous scroll after 5 seconds
+    setTimeout(() => setIsAutoScrolling(true), 5000);
+  };
+
+  const handleIndicatorClick = (index) => {
+    // Pause continuous scroll and jump to position
+    setIsAutoScrolling(false);
+    setCurrentPosition(index);
+
+    // Resume continuous scroll after 5 seconds
+    setTimeout(() => setIsAutoScrolling(true), 5000);
   };
 
   return (
@@ -164,7 +192,7 @@ const BestSellers = () => {
         <div className="section-header">
           <h2>OUR PRODUCTS</h2>
         </div>
-        
+
         <div className="products-scroll-container">
           {/* Manual Control Buttons */}
           <button className="scroll-btn scroll-btn-left" onClick={scrollLeft}>
@@ -173,13 +201,13 @@ const BestSellers = () => {
           <button className="scroll-btn scroll-btn-right" onClick={scrollRight}>
             <i className="fas fa-chevron-right"></i>
           </button>
-          
 
-          
+
+
           <div className="products-scroll" ref={scrollRef}>
             {products.concat(products).map((product, index) => (
-              <div 
-                key={`${product.id}-${index}`} 
+              <div
+                key={`${product.id}-${index}`}
                 className="product-card"
                 onClick={() => handleProductClick(product)}
               >
@@ -193,14 +221,14 @@ const BestSellers = () => {
               </div>
             ))}
           </div>
-          
+
           {/* Progress Indicators */}
           <div className="scroll-indicators">
             {products.map((_, index) => (
               <button
                 key={index}
                 className={`indicator ${index === currentPosition ? 'active' : ''}`}
-                onClick={() => setCurrentPosition(index)}
+                onClick={() => handleIndicatorClick(index)}
               />
             ))}
           </div>

@@ -21,33 +21,33 @@ const Navbar = () => {
   const handleSmoothScroll = (e, targetId) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
-    
+
     if (targetElement) {
       const navbarHeight = 80; // Fixed navbar height
       const targetPosition = targetElement.offsetTop - navbarHeight;
-      
+
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
       });
     }
-    
+
     // Close mobile menu if open
     closeMobileMenu();
   };
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
-    
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Always show navbar when mobile menu is open
       if (isMobileMenuOpen) {
         setIsNavbarVisible(true);
         return;
       }
-      
+
       // Show navbar only at the very top of the page (0-5px)
       if (currentScrollY <= 5) {
         setIsNavbarVisible(true);
@@ -56,13 +56,13 @@ const Navbar = () => {
       else if (currentScrollY > lastScrollY && currentScrollY > 5) {
         // Scrolling down - hide navbar immediately
         setIsNavbarVisible(false);
-      } 
+      }
       // Show navbar when scrolling up
       else if (currentScrollY < lastScrollY) {
         // Scrolling up - show navbar
         setIsNavbarVisible(true);
       }
-      
+
       lastScrollY = currentScrollY;
     };
 
@@ -72,7 +72,7 @@ const Navbar = () => {
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -118,7 +118,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
@@ -131,7 +131,7 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div 
+      <div
         className={`mobile-menu-overlay ${isMobileMenuOpen ? 'active' : ''}`}
         onClick={closeMobileMenu}
       ></div>
@@ -142,7 +142,7 @@ const Navbar = () => {
         <button className="mobile-menu-close" onClick={closeMobileMenu}>
           <i className="fas fa-times"></i>
         </button>
-        
+
         <div className="mobile-menu-content">
           <ul className="nav-links">
             <li><a href="#home" onClick={(e) => handleSmoothScroll(e, 'home')}>Home</a></li>
@@ -151,7 +151,7 @@ const Navbar = () => {
             <li><a href="#about" onClick={(e) => handleSmoothScroll(e, 'about')}>About Us</a></li>
             <li><a href="#contact" onClick={(e) => handleSmoothScroll(e, 'contact')}>Contact</a></li>
           </ul>
-          
+
           <div className="mobile-social-section">
             <h4>Follow Us</h4>
             <div className="social-links">

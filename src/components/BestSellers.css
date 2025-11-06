@@ -10,7 +10,6 @@
     position: relative;
 }
 
-/* Decorative border line at the top of products section */
 
 
 /* Decorative diamond accent */
@@ -86,9 +85,24 @@
 
 .products-scroll {
     display: flex;
-    gap: 5rem;
+    gap: 0.5rem;
     width: fit-content;
     transition: transform 0.5s ease;
+}
+
+/* Continuous right-to-left scrolling animation */
+@keyframes scrollRightContinuous {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover for better user experience */
+.products-scroll-container:hover .products-scroll {
+    animation-play-state: paused;
 }
 
 /* Manual Control Buttons */
